@@ -1,4 +1,5 @@
 
+ html-side
 const products = [
     {
         id: 1,
@@ -28,3 +29,12 @@ function renderProducts() {
 }
 
 renderProducts();
+=======
+function tikla() {
+    alert('Butona tıkladınız!');
+
+}
+function tiklama(){
+    alert('butona tiklamasaydin');
+}
+main
