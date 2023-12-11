@@ -1,13 +1,11 @@
-<<<<<<< Updated upstream
-<iframe src="www.google.com" frameborder="0"></iframe>
-=======
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Awesome Shop</title>
-    <link rel="stylesheet" href=".css">
+    <link rel="stylesheet" href="basic.css">
 </head>
 <body>
     <header>
@@ -39,6 +37,19 @@
         <p>&copy; 2023 My Awesome Shop. All rights reserved.</p>
     </footer>
     <script src="basicsj.js"></script>
+    <h1>Track Your Order</h1>
+    <form id="tracking-form">
+        <label for="order-number">Order Number:</label>
+        <input type="text" id="order-number" required>
+        <br>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" required>
+        <br>
+        <button type="submit">Track Order</button>
+    </form>
+    <div id="tracking-info"></div>
+   
+    
 </body>
 </html>
 
