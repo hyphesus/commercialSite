@@ -1,8 +1,48 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = null; // Layout kullanmayacağız
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ana Sayfa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Duyarlılık için meta etiketi -->
+    <!-- CSS dosyalarını ekleyebiliriz -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Ek CSS dosyaları burada eklenebilir -->
+</head>
+<body>
+    <div class="text-center">
+        <h1>Welcome to the Home Page</h1>
+        <p>Click the buttons below to navigate:</p>
+        <div class="mt-4">
+            <a href="/Product/ProductList" class="btn btn-primary">Product List</a>
+            <a href="/Product/ProductDetail" class="btn btn-primary">Product Detail</a>
+            <a href="/Cart/Cart" class="btn btn-primary">Cart</a>
+            <a href="/Payment/Payment" class="btn btn-primary">Payment</a>
+            <a href="/Account/Login" class="btn btn-primary">Account</a>
+            <a href="/Order/OrderHistory" class="btn btn-primary">Order History</a>
+        </div>
+    </div>
+    
+            <!-- Diğer kategoriler burada listelenebilir -->
+        </div>
+
+        <!-- Kampanyalar veya İndirimler -->
+        <h2>Kampanyalar</h2>
+        <!-- Kampanyalı ürünler veya indirim bilgileri burada listelenebilir -->
+
+        <!-- İletişim Bilgileri veya Destek İletişimi -->
+        <h2>İletişim</h2>
+        <p>Bize ulaşın veya canlı destek alın</p>
+
+        <!-- Giriş Yap / Kaydol Butonları -->
+        <a href="login" class="btn btn-primary">Giriş Yap</a>
+        <a href="signup" class="btn btn-secondary">Kaydol</a>
+    </div>
+
+    <!-- JavaScript dosyalarını ekleyebiliriz -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Ek JS dosyaları burada eklenebilir -->
+</body>
+</html>
