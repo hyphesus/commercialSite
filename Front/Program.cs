@@ -24,4 +24,4 @@ namespace YourProjectNamespace
         }
     }
 }
-//deðiþiklik
+//deðiþiklik bunun üzerine bi daha ekleme yaptým
