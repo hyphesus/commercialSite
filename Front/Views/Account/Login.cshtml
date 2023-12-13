@@ -1,0 +1,41 @@
+@{
+    Layout = null; // Layout kullanmayacağız
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Giriş Yap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Duyarlılık için meta etiketi -->
+    <!-- CSS dosyalarını ekleyebiliriz -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Ek CSS dosyaları burada eklenebilir -->
+</head>
+<body>
+    <div class="container">
+        <h1>Giriş Yap</h1>
+        <!-- Giriş formu -->
+        <form>
+            <div class="form-group">
+                <label for="username">Kullanıcı Adı</label>
+                <input type="text" class="form-control" id="username" placeholder="Kullanıcı Adınızı Giriniz">
+            </div>
+            <div class="form-group">
+                <label for="password">Şifre</label>
+                <input type="password" class="form-control" id="password" placeholder="Şifrenizi Giriniz">
+            </div>
+            <!-- Giriş butonu -->
+            <button type="submit" class="btn btn-primary">Giriş Yap</button>
+        </form>
+    </div>
+
+    <!-- JavaScript dosyalarını ekleyebiliriz -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Ek JS dosyaları burada eklenebilir -->
+
+    <div class="text-center mt-4">
+        <a href="~/Home/Index" class="btn btn-secondary">Ana Sayfaya dön</a>
+    </div>
+    
+</body>
+</html>

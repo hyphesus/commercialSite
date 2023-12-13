@@ -1,0 +1,43 @@
+@{
+    Layout = null; // Layout kullanmayacağız
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alışveriş Sepeti</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Duyarlılık için meta etiketi -->
+    <!-- CSS dosyalarını ekleyebiliriz -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Ek CSS dosyaları burada eklenebilir -->
+</head>
+<body>
+    <div class="container">
+        <h1>Alışveriş Sepeti</h1>
+        <!-- Sepet içeriği -->
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Örnek ürünler -->
+                <h3>Ürün 1</h3>
+                <p>Fiyat: $20</p>
+                <input type="number" value="1" min="1" max="10">
+                <button class="btn btn-danger">Sepetten Kaldır</button>
+            </div>
+            <!-- Diğer ürünler burada listelenebilir -->
+        </div>
+        <!-- Toplam fiyat -->
+        <h3>Toplam: $20</h3>
+        <!-- Satın Alma Butonu -->
+        <button class="btn btn-primary">Satın Al</button>
+    </div>
+
+    <!-- JavaScript dosyalarını ekleyebiliriz -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Ek JS dosyaları burada eklenebilir -->
+
+    <div class="text-center mt-4">
+        <a href="~/Home/Index" class="btn btn-secondary">Ana Sayfaya dön</a>
+    </div>
+    
+</body>
+</html>
