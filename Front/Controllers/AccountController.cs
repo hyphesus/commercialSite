@@ -16,6 +16,13 @@ namespace YourProjectNamespace.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult SignUp()
+        {
+            // Kullanıcı kayıt işlemleri
+            return View();
+        }
+
         public IActionResult ChangePassword()
         {
             // Şifre değiştirme işlemleri
