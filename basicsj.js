@@ -31,7 +31,7 @@ function renderProducts() {
 }
 
 renderProducts();
-=======
+
 function tikla() {
     alert('Butona tıkladınız!');
 
