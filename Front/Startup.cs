@@ -3,6 +3,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Newtonsoft.Json.Serialization;
+using System.Threading.Tasks;
+
 
 namespace YourProjectNamespace
 {
@@ -18,6 +24,25 @@ namespace YourProjectNamespace
         // ConfigureServices is where you add services to the DI container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            // Add Cors
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin",
+                    builder => builder
+                        .AllowAnyOrigin() // WithOrigins and AllowCredentials cannot be used together.
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .SetIsOriginAllowed((host) => true)
+                        .AllowCredentials());
+            });
+
+            //JSON Serializer
+            services.AddControllersWithViews().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
+                    .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+
+
             services.AddControllersWithViews();
             // Add other services such as DbContext, authentication, etc.
         }
@@ -25,6 +50,13 @@ namespace YourProjectNamespace
         // Configure is where you set up the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            
+            //Enable Cors
+            app.UseCors(options => options
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
