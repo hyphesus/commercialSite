@@ -1,9 +1,4 @@
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
-
-namespace YourProjectNamespace
-{
-    using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Hosting;
 
     namespace YourProjectNamespace
@@ -23,4 +18,8 @@ namespace YourProjectNamespace
                     });
         }
     }
+<<<<<<< Updated upstream
 }
+=======
+//de�i�iklik3
+>>>>>>> Stashed changes
