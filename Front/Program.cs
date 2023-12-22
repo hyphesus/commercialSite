@@ -1,9 +1,4 @@
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
-
-namespace YourProjectNamespace
-{
-    using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Hosting;
 
     namespace YourProjectNamespace
@@ -23,5 +18,4 @@ namespace YourProjectNamespace
                     });
         }
     }
-}
-//de�i�iklik3
+
