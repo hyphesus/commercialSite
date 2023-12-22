@@ -18,8 +18,5 @@ using Microsoft.AspNetCore.Hosting;
                     });
         }
     }
-<<<<<<< Updated upstream
-}
-=======
 //de�i�iklik3
->>>>>>> Stashed changes
+    
