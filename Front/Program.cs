@@ -18,5 +18,4 @@ using Microsoft.AspNetCore.Hosting;
                     });
         }
     }
-//de�i�iklik3
-    
+
