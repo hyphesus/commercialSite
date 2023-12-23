@@ -30,6 +30,13 @@ namespace YourProjectNamespace.Controllers
             return View();
         }
 
+
+        public IActionResult wishlist()
+        {
+            // Şifre değiştirme işlemleri
+            return View();
+        }
+
         // Diğer hesap işlemleri (kayıt, giriş, çıkış vb.) buraya eklenebilir
     }
 }

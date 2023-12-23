@@ -10,6 +10,19 @@ namespace YourProjectNamespace.Controllers
             return View();
         }
 
+        public IActionResult contactUs()
+        {
+            // Ana sayfa işlemleri
+            return View();
+        }
+
+        public IActionResult about()
+        {
+            // Ana sayfa işlemleri
+            return View();
+        }
+
+
         public IActionResult Error()
         {
             // Hata sayfasına yönlendirme işlemleri
