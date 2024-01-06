@@ -103,6 +103,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnaSayfaController.cs" />
+    <Compile Include="Controllers\KaydolController.cs" />
+    <Compile Include="Controllers\KullaniciController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -123,6 +125,8 @@
     <Content Include="Views\Account\error.cshtml" />
     <Content Include="Views\Account\admin.cshtml" />
     <Content Include="Views\AnaSayfa\AnaSayfa.cshtml" />
+    <Content Include="Views\Kullanici\Kullanici.cshtml" />
+    <Content Include="Views\Kaydol\Kaydol.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
