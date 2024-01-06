@@ -9,6 +9,8 @@ namespace HerSeyci.Models
     {
         public string user_name { get; set; }
         public string password { get; set; }
+        public bool isAdmin { get; set; }
+
     }
     
 
