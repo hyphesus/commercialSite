@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 
@@ -46,7 +47,7 @@ namespace HerSeyci.Controllers
                 else
                 {
                     con.Close();
-                    return View("Anasayfa");
+                    return View("~/Views/AnaSayfa/AnaSayfa.cshtml");
                 }
             }
             else
