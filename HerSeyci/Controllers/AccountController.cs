@@ -34,7 +34,7 @@ namespace HerSeyci.Controllers
             connectionString();
             con.Open();
             com.Connection = con;
-            com.CommandText = "SELECT * FROM users WHERE username ='" + acc.user_name + "' AND password ='" + acc.password + "'";
+            com.CommandText = "SELECT * FROM users WHERE username ='" + acc.User_name + "' AND password ='" + acc.Password + "'";
             dr = com.ExecuteReader();
             if (dr.Read())
             {
