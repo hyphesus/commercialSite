@@ -39,9 +39,21 @@ namespace HerSeyci
             string logPath = Server.MapPath("~/App_Data/ErrorLog.txt");
             string message = $"Time: {DateTime.Now}\nException: {exception}\n\n";
 
-            // Dosya yoksa oluþtur, varsa sonuna ekle
             File.AppendAllText(logPath, message);
         }
+        protected void Application_End(object sender, EventArgs e)
+        {
+            ClearLog();
+        }
 
+        private void ClearLog()
+        {
+            string logPath = Server.MapPath("~/App_Data/ErrorLog.txt");
+
+            if (File.Exists(logPath))
+            {
+                File.WriteAllText(logPath, String.Empty);
+            }
+        }
     }
 }
