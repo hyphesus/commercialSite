@@ -105,6 +105,7 @@
     <Compile Include="Controllers\AnaSayfaController.cs" />
     <Compile Include="Controllers\KaydolController.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -127,6 +128,10 @@
     <Content Include="Views\AnaSayfa\AnaSayfa.cshtml" />
     <Content Include="Views\Kullanici\Kullanici.cshtml" />
     <Content Include="Views\Kaydol\Kaydol.cshtml" />
+    <Content Include="Views\Products\Elektronik.cshtml" />
+    <Content Include="Views\Products\Giyim.cshtml" />
+    <Content Include="Views\Products\Kozmetik.cshtml" />
+    <Content Include="Views\Account\Cart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

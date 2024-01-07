@@ -60,5 +60,9 @@ namespace HerSeyci.Controllers
 
 
         }
+        public ActionResult Cart()
+        {
+            return View();
+        }
     }
 }
