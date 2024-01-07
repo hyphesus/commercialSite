@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HerSeyci.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,8 +10,10 @@ namespace HerSeyci.Controllers
     public class KullaniciController : Controller
     {
         // GET: Kullanici
-        public ActionResult Kullanici()
+        [HttpGet]
+        public ActionResult Kullanici(account acc, FormCollection Nesneler)
         {
+            Nesneler["Ad"] = acc.Name;
 
             return View();
         }
