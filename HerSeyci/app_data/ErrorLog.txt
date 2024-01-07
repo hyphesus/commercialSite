@@ -1,0 +1,9 @@
+Time: 7.01.2024 17:36:55
+Exception: System.Web.HttpException (0x80004005): '/e' yolunun denetleyicisi bulunamadı veya IController'ı uygulamıyor.
+   konum: System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   konum: System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   konum: System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   konum: System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   konum: System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   konum: System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
