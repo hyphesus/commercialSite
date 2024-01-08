@@ -36,9 +36,32 @@ namespace HerSeyci.Controllers
             com.Connection = con;
             com.CommandText = "SELECT * FROM users WHERE username ='" + acc.User_name + "' AND password ='" + acc.Password + "'";
             dr = com.ExecuteReader();
+
+           
             if (dr.Read())
             {
                 string x = dr["isAdmin"].ToString();
+                acc.Name = dr["name"].ToString();
+                acc.User_name = dr["username"].ToString();
+                acc.Surename = dr["surename"].ToString();
+                acc.Adress1 = dr["adress1"].ToString();
+                acc.Adress2 = dr["adress2"].ToString();
+                acc.E_posta = dr["email"].ToString();
+                acc.Phone = dr["phone"].ToString();
+                acc.Password = dr["password"].ToString();
+
+
+                Session["Ad"] = acc.Name;
+                Session["Soyad"] = acc.Surename;
+                Session["User_name"] = acc.User_name;
+                Session["Adress1"] = acc.Adress1;
+                Session["Adress2"] = acc.Adress2;
+                Session["Eposta"] = acc.E_posta;
+                Session["Phone"] = acc.Phone;
+                Session["Password"] = acc.Password;
+
+
+
                 if (x=="True")
                 {
                     con.Close();
@@ -47,7 +70,7 @@ namespace HerSeyci.Controllers
                 else
                 {
                     con.Close();
-                    return View("~/Views/AnaSayfa/AnaSayfa.cshtml");
+                    return View("~/Views/Kullanici/Kullanici.cshtml",TempData);
                 }
             }
             else

@@ -88,27 +88,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ErrorLog.txt" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\responsive.css" />
     <Content Include="css\style.css" />
     <Content Include="Global.asax" />
-    <Content Include="images\logo.png" />
+    <Content Include="images\logo1.png" />
+    <Content Include="images\profile.png" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\custom.js" />
     <Content Include="js\jquery-3.4.1.min.js" />
+    <Content Include="Views\not.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnaSayfaController.cs" />
+    <Compile Include="Controllers\ECartDBEntities.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\herseycidbentities.cs" />
+    <Compile Include="Controllers\itemController.cs" />
     <Compile Include="Controllers\KaydolController.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
+    <Compile Include="Controllers\shoppingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\account.cs" />
+    <Compile Include="Models\category.cs" />
+    <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -125,8 +135,15 @@
     <Content Include="Views\Account\error.cshtml" />
     <Content Include="Views\Account\admin.cshtml" />
     <Content Include="Views\AnaSayfa\AnaSayfa.cshtml" />
-    <Content Include="Views\Kullanici\Kullanici.cshtml" />
     <Content Include="Views\Kaydol\Kaydol.cshtml" />
+    <Content Include="Views\Kullanici\Kullanici.cshtml" />
+    <Content Include="Views\Error\Error.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\shopping\shopping.cshtml" />
+    <Content Include="Views\AnaSayfa\Contact.cshtml" />
+    <Content Include="Views\AnaSayfa\Service.cshtml" />
+    <Content Include="Views\AnaSayfa\About.cshtml" />
+    <Content Include="Views\item\index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -134,9 +151,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

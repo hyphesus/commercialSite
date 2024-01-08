@@ -38,7 +38,7 @@ namespace HerSeyci.Controllers
             com.Parameters.AddWithValue("@E_posta", acc.E_posta);
             com.Parameters.AddWithValue("@Adress1", acc.Adress1);
 
-            Console.WriteLine(com.ToString());
+      
 
             connectionString();
             con.Open();
@@ -49,7 +49,7 @@ namespace HerSeyci.Controllers
             {
 
                 con.Close();
-                return View("~/Views/Kullanici/Kullanici.cshtml");
+                return View("~/Views/Anasayfa/Anasayfa.cshtml");
             }
             else
             {

@@ -17,6 +17,21 @@ namespace HerSeyci.Controllers
 
             return View();
         }
+        public ActionResult Contact()
+        {
 
+            return View();
+        }
+
+        public ActionResult Service()
+        {
+
+            return View();
+        }
+        public ActionResult About()
+        {
+
+            return View();
+        }
     }
 }
