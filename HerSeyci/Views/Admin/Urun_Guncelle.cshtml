@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Urun_Guncelle";
+    Layout = "~/Views/_LayoutPage2.cshtml";
+}
+
+<form action="Urun_Guncelle_Post" method="post">
+    <div style="width:300px; ">
+        <h5 class="card-title text-center mb-5 fw-light fs-5">Ürün Güncelle</h5>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Ürün Id</label>
+                <input name="product_id" class="form-control" placeholder="Ürün Id">
+            </div>
+           
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label>Stok Değişimi</label>
+                <select name="stock" class="form-control">
+                    <option selected>True</option>
+                    <option>False</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Güncelle</button>
+    </div>
+</form>
+

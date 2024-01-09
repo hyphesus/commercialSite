@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "Kullanici";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+
+
+}
+
+
+
+
+<style>
+
+
+    .form-control:focus {
+        box-shadow: none;
+        border-color: #BA68C8
+    }
+
+    .profile-button {
+        background: rgb(99, 39, 120);
+        box-shadow: none;
+        border: none
+    }
+
+        .profile-button:hover {
+            background: #682773
+        }
+
+        .profile-button:focus {
+            background: #682773;
+            box-shadow: none
+        }
+
+        .profile-button:active {
+            background: #682773;
+            box-shadow: none
+        }
+
+    .back:hover {
+        color: #682773;
+        cursor: pointer
+    }
+
+    .labels {
+        font-size: 11px
+    }
+
+    .add-experience:hover {
+        background: #BA68C8;
+        color: #fff;
+        cursor: pointer;
+        border: solid 1px #BA68C8
+    }
+</style>
+<form action="Sifre_degistir" method="post">
+
+    <div class="container rounded bg-white mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="~/images/profile.png"><label class="font-weight-bold">@HttpContext.Current.Session["Ad"].ToString()</label><label class="text-black-50">@HttpContext.Current.Session["Eposta"].ToString()</label><span> </span></div>
+            </div>
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Profil</h4>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <label class="labels">Ad</label><input type="text" name="Ad" class="form-control" placeholder="Adınızı Giriniz" value=@HttpContext.Current.Session["Ad"].ToString()>
+                        </div>
+                        <div class="col-md-6"><label class="labels">Soyad</label><input type="text" name="Soyad" class="form-control" value="@HttpContext.Current.Session["Soyad"].ToString()" placeholder="Soyadını Giriniz"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Telefon Numarası</label><input type="text" name="Tel" class="form-control" placeholder="Telefon Numaranızı Giriniz" value="@HttpContext.Current.Session["Phone"].ToString()"></div>
+                        <div class="col-md-12"><label class="labels">Adres 1</label><input type="text" class="form-control" placeholder="Adres 1" value="@HttpContext.Current.Session["Adress1"].ToString()"></div>
+                        <div class="col-md-12"><label class="labels">Adres 2</label><input type="text" class="form-control" placeholder="Adres 2" value="@HttpContext.Current.Session["Adress2"].ToString()"></div>
+                        <div class="col-md-12"><label class="labels">E-Mail</label><input type="text" class="form-control" placeholder="Mailinizi Giriniz" value="@HttpContext.Current.Session["Eposta"].ToString()"></div>
+
+                    </div>
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Profili Kaydet</button></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 py-5">
+
+                    <div class="d-flex justify-content-between align-items-center experience"><span>Şifre Değiştirme</span></div><br>
+                    <div class="col-md-12"><label class="labels">Eski Şifre</label><input type="text" class="form-control" name="password" placeholder="Eski Şifrenizi Giriniz" value=""></div> <br>
+                    <div class="col-md-12"><label class="labels">Yeni Şifre</label><input type="password" class="form-control" name="password2" placeholder="Yeni Şifrenizi Giriniz" value=""></div>
+                    <div class="mt-5 text-center"><button type="submit" class="btn btn-primary profile-button">Şifreyi Değiştir</button></div>
+
+                </div>
+
+                <div class="p-3 py-5">
+                    <label class="labels">Kuponlar</label>
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Sipariş Takibi</button></div>
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+</form>
+
+
