@@ -19,42 +19,42 @@ namespace HerSeyci
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
 
-        protected void Application_Error(object sender, EventArgs e)
-        {
-            var exception = Server.GetLastError();
+        //protected void Application_Error(object sender, EventArgs e)
+        //{
+        //    var exception = Server.GetLastError();
 
-            LogError(exception);
+        //    LogError(exception);
 
-            if (exception is HttpException httpException && httpException.GetHttpCode() == 404)
-            {
-                Response.Redirect("~/Error/NotFound");
-            }
-            else
-            {
-                Response.Redirect("~/Error");
-            }
+        //    if (exception is HttpException httpException && httpException.GetHttpCode() == 404)
+        //    {
+        //        Response.Redirect("~/Error/NotFound");
+        //    }
+        //    else
+        //    {
+        //        Response.Redirect("~/Error");
+        //    }
 
-        }
-        private void LogError(Exception exception)
-        {
-            string logPath = Server.MapPath("~/App_Data/ErrorLog.txt");
-            string message = $"Time: {DateTime.Now}\nException: {exception}\n\n";
+        //}
+        //private void LogError(Exception exception)
+        //{
+        //    string logPath = Server.MapPath("~/App_Data/ErrorLog.txt");
+        //    string message = $"Time: {DateTime.Now}\nException: {exception}\n\n";
 
-            File.AppendAllText(logPath, message);
-        }
-        protected void Application_End(object sender, EventArgs e)
-        {
-            ClearLog();
-        }
+        //    File.AppendAllText(logPath, message);
+        //}
+        //protected void Application_End(object sender, EventArgs e)
+        //{
+        //    ClearLog();
+        //}
 
-        private void ClearLog()
-        {
-            string logPath = Server.MapPath("~/App_Data/ErrorLog.txt");
+        //private void ClearLog()
+        //{
+        //    string logPath = Server.MapPath("~/App_Data/ErrorLog.txt");
 
-            if (File.Exists(logPath))
-            {
-                File.WriteAllText(logPath, String.Empty);
-            }
-        }
+        //    if (File.Exists(logPath))
+        //    {
+        //        File.WriteAllText(logPath, String.Empty);
+        //    }
+        //}
     }
 }

@@ -1,18 +1,19 @@
 ﻿using System;
-using HerSeyci.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Data.SqlClient;
 
 namespace HerSeyci.Controllers
 {
-    public class shoppingController : Controller
+    public class SepetController : Controller
     {
-        // GET: shopping
-        public ActionResult Index()
+        // GET: Sepet
+
+        [HttpGet]
+        public ActionResult Sepet()
         {
+
             return View();
         }
     }

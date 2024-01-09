@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace HerSeyci.Controllers
 {
@@ -28,7 +29,7 @@ namespace HerSeyci.Controllers
         }
 
         [HttpPost]
-        public ActionResult verify(account acc)
+        public ActionResult Kullanici(account acc)
         {
             // Kullanıcı kayıt işlemleri
             connectionString();
@@ -65,12 +66,13 @@ namespace HerSeyci.Controllers
                 if (x=="True")
                 {
                     con.Close();
-                    return View("admin");
+                    return RedirectToAction("Urun_Ekle", "Admin");
                 }
                 else
                 {
                     con.Close();
-                    return View("~/Views/Kullanici/Kullanici.cshtml",TempData);
+                    return RedirectToAction("Kullanici", "Kullanici");
+
                 }
             }
             else

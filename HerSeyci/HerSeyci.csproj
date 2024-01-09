@@ -94,8 +94,13 @@
     <Content Include="css\responsive.css" />
     <Content Include="css\style.css" />
     <Content Include="Global.asax" />
+    <Content Include="images\beyaz_gomlek.jpeg" />
+    <Content Include="images\beyaz_kad.jpg" />
+    <Content Include="images\kablo_kullaklik.jpg" />
     <Content Include="images\logo1.png" />
     <Content Include="images\profile.png" />
+    <Content Include="images\ruj.jpg" />
+    <Content Include="images\siyah_elbise_kadin.jpg" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\custom.js" />
     <Content Include="js\jquery-3.4.1.min.js" />
@@ -105,19 +110,18 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AnaSayfaController.cs" />
-    <Compile Include="Controllers\ECartDBEntities.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
-    <Compile Include="Controllers\herseycidbentities.cs" />
-    <Compile Include="Controllers\itemController.cs" />
+    <Compile Include="Controllers\KartOlusturmaController.cs" />
     <Compile Include="Controllers\KaydolController.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
-    <Compile Include="Controllers\shoppingController.cs" />
+    <Compile Include="Controllers\SepetController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\account.cs" />
-    <Compile Include="Models\category.cs" />
+    <Compile Include="Models\products.cs" />
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -131,7 +135,6 @@
     <Content Include="fonts\octin_sports_rg.ttf" />
     <None Include="packages.config" />
     <Content Include="Views\_LayoutPage1.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\error.cshtml" />
     <Content Include="Views\Account\admin.cshtml" />
     <Content Include="Views\AnaSayfa\AnaSayfa.cshtml" />
@@ -144,6 +147,14 @@
     <Content Include="Views\AnaSayfa\Service.cshtml" />
     <Content Include="Views\AnaSayfa\About.cshtml" />
     <Content Include="Views\item\index.cshtml" />
+    <Content Include="Views\KartOlusturma\Giyisi.cshtml" />
+    <Content Include="Views\KartOlusturma\Elektronik.cshtml" />
+    <Content Include="Views\KartOlusturma\Kozmetik.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\_LayoutPage2.cshtml" />
+    <Content Include="Views\Admin\Urun_Ekle.cshtml" />
+    <Content Include="Views\Admin\Urun_Guncelle.cshtml" />
+    <Content Include="Views\Sepet\Sepet.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
