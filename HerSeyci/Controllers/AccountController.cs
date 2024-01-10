@@ -25,6 +25,7 @@ namespace HerSeyci.Controllers
         [HttpGet]
         public ActionResult Login()
         {
+
             return View();
         }
 
@@ -63,7 +64,7 @@ namespace HerSeyci.Controllers
                 Session["Phone"] = acc.Phone;
                 Session["Password"] = acc.Password;
 
-
+                Session["Total_price"] = 0;
 
                 if (x=="True")
                 {

@@ -15,6 +15,8 @@ namespace HerSeyci.Models
         public int category_id { get; set; }
         public string img_url { get; set; }
         public string category{ get; set; }
+        public int sepet_total { get; set; }
+        public int product_count { get; set; }
 
 
 

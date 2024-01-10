@@ -94,10 +94,12 @@
     <Content Include="css\responsive.css" />
     <Content Include="css\style.css" />
     <Content Include="Global.asax" />
+    <Content Include="images\ayakkabi.png" />
     <Content Include="images\beyaz_gomlek.jpeg" />
     <Content Include="images\beyaz_kad.jpg" />
     <Content Include="images\kablo_kullaklik.jpg" />
     <Content Include="images\logo1.png" />
+    <Content Include="images\onay.png" />
     <Content Include="images\profile.png" />
     <Content Include="images\ruj.jpg" />
     <Content Include="images\siyah_elbise_kadin.jpg" />
@@ -123,7 +125,6 @@
     <Compile Include="Models\account.cs" />
     <Compile Include="Models\coupon.cs" />
     <Compile Include="Models\products.cs" />
-    <Compile Include="Models\sepet.cs" />
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -158,6 +159,7 @@
     <Content Include="Views\Admin\Urun_Guncelle.cshtml" />
     <Content Include="Views\Admin\Kupon.cshtml" />
     <Content Include="Views\Sepet\Sepet.cshtml" />
+    <Content Include="Views\Sepet\Fatura.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

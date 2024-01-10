@@ -92,9 +92,17 @@
                 </div>
 
                 <div class="p-3 py-5">
-                    <label class="labels">Kuponlar</label>
-                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Sipariş Takibi</button></div>
-                </div>
+
+                    <u><h5>Kuponlar</h5></u>
+                        @model List<string>
+
+                        @foreach (var coupons in Model)
+                        {
+                            <label>@coupons</label>  <br />
+
+                        }
+                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Sipariş Takibi</button></div>
+</div>
 
             </div>
 

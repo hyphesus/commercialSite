@@ -13,15 +13,15 @@
             <div class="col-10">
 
                 @*<div class="d-flex justify-content-between align-items-center mb-4">
-                        <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
-                        <div>
-                            <p class="mb-0">
-                                <span class="text-muted">Sort by:</span> <a href="#!" class="text-body">
-                                    price <i class="fas fa-angle-down mt-1"></i>
-                                </a>
-                            </p>
-                        </div>
-                    </div>*@
+            <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
+            <div>
+                <p class="mb-0">
+                    <span class="text-muted">Sort by:</span> <a href="#!" class="text-body">
+                        price <i class="fas fa-angle-down mt-1"></i>
+                    </a>
+                </p>
+            </div>
+        </div>*@
 
 
 
@@ -75,53 +75,28 @@
 
 
 
-
-                <div class="card mb-4">
-                    <div class="card-body p-4 flex-row">
-                        <div class="form-outline flex-fill">
-                            <input type="text" id="form1" class="form-control form-control-lg" />
-                            <label class="form-label">Kupon Kodunuzu Giriniz</label>
-                        </div>
-                        <button type="button" class="btn btn-outline-warning btn-lg ms-4">Ekle</button>
-                    </div>
-                </div>
-
-
-
-                @*<div class="card mb-4">
-                    <div class="card-body p-4 flex-row">
-
-
-                        <table>
-                            @model List<HerSeyci.Models.products>
-
-                            @foreach (var item in Model.Items)
-                            {
-                                <tr>
-                                    <td>@item.ProductName</td>
-                                    <td>@item.Quantity</td>
-                                    <td>@item.Price.ToString("C")</td>
-                                    <td>@item.TotalPrice.ToString("C")</td>
-                                </tr>
-                            }
-
-                            <tr>
-                                <td colspan="3">Toplam Tutar:</td>
-                                <td>@Model.TotalAmount.ToString("C")</td>
-                            </tr>
-                        </table>
-
-                    </div>
-                </div>*@
-
-                @using (Html.BeginForm("Sepet_Sonlandir", "Sepet", FormMethod.Post))
+                @using (Html.BeginForm("Kupon_Ekle", "Sepet", FormMethod.Post))
                 {
+                    <div class="card mb-4">
+                        <div class="card-body p-4 flex-row">
+                            <div class="form-outline flex-fill">
+                                <input type="text" name="coupon_name" id="form1" class="form-control form-control-lg" />
+                                <label class="form-label">Kupon Kodunuzu Giriniz</label>
+                            </div>
+                            <button type="submit" class="btn btn-outline-warning btn-lg ms-4">Ekle</button>
+                        </div>
+                    </div>
+                }
+
+
+
+                <form action="Sepeti_Sonlandir" method="post">
                     <div class="card">
                         <div class="card-body">
                             <button type="submit" class="btn btn-warning btn-block btn-lg">Ödeme</button>
                         </div>
                     </div>
-                }
+                   </form>
             </div>
         </div>
     </div>

@@ -28,8 +28,26 @@ namespace HerSeyci.Controllers
         [HttpGet]
         public ActionResult Kullanici()
         {
+            List<string> couponList = new List<string>();
             if (Session["User_id"]!=null)
-                return View();
+            {
+
+
+                connectionString();
+                con.Open();
+                com.Connection = con;
+
+                com.Parameters.AddWithValue("@User_id", Convert.ToInt32(Session["user_id"]));
+                com.CommandText = "select * from coupons where user_id = @User_id OR user_id=1";
+                dr = com.ExecuteReader();
+
+                while(dr.Read())
+                {
+                    couponList.Add(dr["coupon_code"].ToString());
+                }
+                con.Close();
+                return View(couponList);
+            }
             else
                 return RedirectToAction("AnaSayfa", "AnaSayfa");
 
