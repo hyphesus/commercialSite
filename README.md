@@ -13,7 +13,8 @@ An e-commerce website for testing purposes. Can be used with necessary back-end 
   
 ## xMind map for fully developed app
 
-![Uygulama Ekran Görüntüsü](https://www.github.com/hyphesus/commercialSite/blob/main/WhatsApp%20Image%202024-01-07%20at%2019.20.25.jpeg)
+![WhatsApp Image 2024-01-07 at 19 20 25](https://github.com/hyphesus/commercialSite/assets/72172084/bb75727f-1314-4f7f-9d31-da9a59145cd9)
+
 
   
 # e-Dükkan
