@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 
@@ -14,13 +15,12 @@ namespace HerSeyci.Controllers
         SqlConnection con = new SqlConnection();
         SqlCommand com = new SqlCommand();
         SqlDataReader dr;
-
         void connectionString()
         {
             con.ConnectionString = "data source=.;database=e_dukkandatabase; integrated security=SSPI;";
 
         }
-
+        List<products> sepet = new List<products>();
         // GET: Sepet
         [HttpGet]
         public ActionResult Sepet()
@@ -28,10 +28,11 @@ namespace HerSeyci.Controllers
 
 
 
-            if(Session["User_id"]!=null)
-            { 
+            if (Session["User_id"] != null)
+            {
                 com.Parameters.AddWithValue("@User_id", Convert.ToInt32(Session["User_id"]));
-                List<products> sepet = new List<products>();
+
+                int toplam = 0;
 
 
                 connectionString();
@@ -52,12 +53,13 @@ namespace HerSeyci.Controllers
                         category_id = Convert.ToInt32(dr["category_id"]),
                         img_url = dr["img_url"].ToString()
                     };
-
+                    toplam += productx.price;
                     sepet.Add(productx);
 
 
                 }
 
+                Session["Total_Price"] = toplam;
                 con.Close();
                 return View(sepet);
             }
@@ -77,32 +79,32 @@ namespace HerSeyci.Controllers
         {
 
 
-            if(Session["User_id"]!=null)
-            { 
-            com.Parameters.AddWithValue("@User_id", Convert.ToInt32(Session["User_id"]));
-            com.Parameters.AddWithValue("@Product_id", ProductId);
-
-            connectionString();
-            con.Open();
-            com.Connection = con;
-            com.CommandText = "INSERT INTO cart (user_id, product_id) VALUES (@User_id, @Product_id)";
-            dr = com.ExecuteReader();
-            con.Close();
-            if (categoryId == 1)
+            if (Session["User_id"] != null)
             {
-                return RedirectToAction("Giyisi", "KartOlusturma");
+                com.Parameters.AddWithValue("@User_id", Convert.ToInt32(Session["User_id"]));
+                com.Parameters.AddWithValue("@Product_id", ProductId);
 
-            }
-            if (categoryId == 2)
-            {
-                return RedirectToAction("Elektronik", "KartOlusturma");
+                connectionString();
+                con.Open();
+                com.Connection = con;
+                com.CommandText = "INSERT INTO cart (user_id, product_id) VALUES (@User_id, @Product_id)";
+                dr = com.ExecuteReader();
+                con.Close();
+                if (categoryId == 1)
+                {
+                    return RedirectToAction("Giyisi", "KartOlusturma");
 
-            }
-            else
-            {
-                return RedirectToAction("Kozmetik", "KartOlusturma");
+                }
+                if (categoryId == 2)
+                {
+                    return RedirectToAction("Elektronik", "KartOlusturma");
 
-            }
+                }
+                else
+                {
+                    return RedirectToAction("Kozmetik", "KartOlusturma");
+
+                }
             }
             else
                 return RedirectToAction("Login", "Account");
@@ -117,15 +119,15 @@ namespace HerSeyci.Controllers
             if (Session["User_id"] != null)
             {
                 com.Parameters.AddWithValue("@User_id", Convert.ToInt32(Session["User_id"]));
-            com.Parameters.AddWithValue("@Product_id", ProductId);
+                com.Parameters.AddWithValue("@Product_id", ProductId);
 
-            connectionString();
-            con.Open();
-            com.Connection = con;
-            com.CommandText = "DELETE TOP (1) FROM cart WHERE product_id = @Product_id AND user_id = @User_id";
-            dr = com.ExecuteReader();
-            con.Close();
-            
+                connectionString();
+                con.Open();
+                com.Connection = con;
+                com.CommandText = "DELETE TOP (1) FROM cart WHERE product_id = @Product_id AND user_id = @User_id";
+                dr = com.ExecuteReader();
+                con.Close();
+
                 return RedirectToAction("sepet", "sepet");
             }
             else
@@ -134,5 +136,44 @@ namespace HerSeyci.Controllers
         }
 
 
+        [HttpPost]
+        public ActionResult Kupon_Ekle(coupon cpn)
+        {
+            com.Parameters.AddWithValue("@User_id", Convert.ToInt32(Session["User_id"]));
+            com.Parameters.AddWithValue("@Kupon", cpn.coupon_name);
+
+
+            connectionString();
+            con.Open();
+            com.Connection = con;
+            com.CommandText = "SELECT * from coupons where (user_id=@User_id AND coupon_code = @Kupon) or (user_id=1 AND coupon_code = @Kupon)";
+            dr = com.ExecuteReader();
+
+            if (dr.Read())
+            {
+                Session["Kupon"] = dr["coupon_value"].ToString();
+            }
+            con.Close();
+            return RedirectToAction("sepet", "sepet");
+        }
+
+
+        [HttpGet]
+        public ActionResult Fatura()
+        {
+            int sonuc = Convert.ToInt32(Session["Total_price"]) - Convert.ToInt32(Session["Kupon"]);
+
+
+            return View(sonuc);
+        }
+
+        [HttpPost]
+        public ActionResult Sepeti_Sonlandir()
+        {
+
+            return RedirectToAction("fatura", "sepet");
+
+        }
     }
 }
+
