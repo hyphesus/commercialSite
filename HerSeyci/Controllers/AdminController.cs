@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.WebPages;
 
 namespace HerSeyci.Controllers
 {
@@ -58,13 +60,14 @@ namespace HerSeyci.Controllers
             {
 
                 con.Close();
-                return View("~/Views/Anasayfa/Anasayfa.cshtml");
+                return RedirectToAction("Anasayfa", "Anasayfa");
             }
             else
             {
                 Console.Write(dr.ToString());
                 con.Close();
-                return View("~/Views/Account/error.cshtml");
+                return RedirectToAction("error", "Account");
+
 
             }
 
@@ -75,7 +78,6 @@ namespace HerSeyci.Controllers
         [HttpGet]
         public ActionResult Urun_Guncelle( products pds)
         {
-            // Kullanıcı kayıt işlemleri
 
             return View();
         }
@@ -83,7 +85,6 @@ namespace HerSeyci.Controllers
         [HttpPost]
         public ActionResult Urun_Guncelle_Post(products pds)
         {
-            // Kullanıcı kayıt işlemleri
             com.Parameters.AddWithValue("@Product_id", pds.product_id);
             com.Parameters.AddWithValue("@Stock", pds.stock);
 
@@ -98,17 +99,65 @@ namespace HerSeyci.Controllers
             {
 
                 con.Close();
-                return View("~/Views/Anasayfa/Anasayfa.cshtml");
+                return RedirectToAction("Anasayfa", "Anasayfa");
             }
             else
             {
                 Console.Write(dr.ToString());
                 con.Close();
-                return View("~/Views/Account/error.cshtml");
+                return RedirectToAction("error", "Account");
+
 
             }
 
         }
+
+
+
+        [HttpGet]
+        public ActionResult Kupon()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Kupon_Ekle(coupon coupon, account acc)
+        {
+
+            com.Parameters.AddWithValue("@User_id", acc.user_id);
+            com.Parameters.AddWithValue("@Kupon_name", coupon.coupon_name);
+            com.Parameters.AddWithValue("@Kupon_value", coupon.coupon_value);
+            string tarih = coupon.coupon_date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+
+
+
+
+
+            com.Parameters.AddWithValue("@Kupon_Tarihi", tarih);
+
+
+            connectionString();
+            con.Open();
+            com.Connection = con;
+            com.CommandText = "INSERT INTO coupons (user_id, coupon_code,coupon_value, expiry_date) VALUES (@User_id, @Kupon_name, @Kupon_value, @Kupon_Tarihi); ";
+            dr = com.ExecuteReader();
+            if (dr.RecordsAffected == 1)
+            {
+
+                con.Close();
+                return RedirectToAction("Kupon", "Admin");
+            }
+            else
+            {
+                Console.Write(dr.ToString());
+                con.Close();
+                return RedirectToAction("Kupon", "Admin");
+
+
+            }
+
+        }
+
 
     }
 }

@@ -43,6 +43,7 @@ namespace HerSeyci.Controllers
             {
                 string x = dr["isAdmin"].ToString();
                 acc.Name = dr["name"].ToString();
+                acc.user_id = Convert.ToInt32(dr["user_id"]);
                 acc.User_name = dr["username"].ToString();
                 acc.Surename = dr["surename"].ToString();
                 acc.Adress1 = dr["adress1"].ToString();
@@ -53,6 +54,7 @@ namespace HerSeyci.Controllers
 
 
                 Session["Ad"] = acc.Name;
+                Session["User_id"] = acc.user_id;
                 Session["Soyad"] = acc.Surename;
                 Session["User_name"] = acc.User_name;
                 Session["Adress1"] = acc.Adress1;

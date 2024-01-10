@@ -28,8 +28,12 @@ namespace HerSeyci.Controllers
         [HttpGet]
         public ActionResult Kullanici()
         {
+            if (Session["User_id"]!=null)
+                return View();
+            else
+                return RedirectToAction("AnaSayfa", "AnaSayfa");
 
-            return View();
+
         }
 
         [HttpPost]
@@ -57,21 +61,23 @@ namespace HerSeyci.Controllers
                 {
                     Session["Password"] = acc.Password2;
                     con.Close();
-                    return View("~/Views/Kullanici/Kullanici.cshtml");
+                    return RedirectToAction("Kullanici", "Kullanici");
+
                 }
                 else
                 {
                     con.Close();
-                    return View("~/Views/Kullanici/Kullanici.cshtml");
+                    return RedirectToAction("Kullanici", "Kullanici");
+
                 }
             }
             else
             {
-                return View("~/Views/Kullanici/Kullanici.cshtml");
+                return RedirectToAction("Kullanici", "Kullanici");
             }
 
 
-   
+
 
 
 

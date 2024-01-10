@@ -49,28 +49,30 @@
     }
 </style>
 
-
 @model List<HerSeyci.Models.products>
 
 @foreach (var product in Model)
 {
 
+    using (Html.BeginForm("Sepete_Ekle", "Sepet", FormMethod.Post))
+    {
+        <div class="container-fluid">
+            <input type="hidden" name="productId" value="@product.product_id" />
+            <input type="hidden" name="categoryId" value="@product.category_id" />
 
-    <div class="container-fluid">
-        <div class="card mx-auto col-md-3 col-10 mt-5">
-            <img class='mx-auto img-thumbnail'
-                 src="@product.img_url"
-                 width="100px" ; height="100px" ; />
-            <div class="card-body text-center mx-auto">
-                <div class='cvp'>
-                    <h5 class="card-title font-weight-bold">@product.name</h5>
-                    <p class="card-text">STOK:@product.stock</p>
-                    <p class="card-text">@product.description</p>
-                    <p class="card-text">$@product.price</p>
-                    <a href="#" class="btn cart px-auto">SEPETE EKLE</a>
+            <div class="card mx-auto col-md-3 col-10 mt-5">
+                <img class='mx-auto img-thumbnail' src="@product.img_url" style="width: 200px; height: 200px;" />
+                <div class="card-body text-center mx-auto">
+                    <div class='cvp'>
+                        <h5 class="card-title font-weight-bold">@product.name</h5>
+                        <p class="card-text">STOK:@product.stock</p>
+                        <p class="card-text">@product.description</p>
+                        <p class="card-text">$@product.price</p>
+                        <button type="submit" class="btn btn-primary">Sepete Ekle</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
+    }
 }

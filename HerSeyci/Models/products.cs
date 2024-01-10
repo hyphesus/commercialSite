@@ -17,5 +17,6 @@ namespace HerSeyci.Models
         public string category{ get; set; }
 
 
+
     }
 }
