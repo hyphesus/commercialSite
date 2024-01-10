@@ -6,7 +6,7 @@ An e-commerce website for testing purposes. Can be used with necessary back-end 
 
 
 
-## Yazarlar ve Teşekkür
+## Contributors 
 
 - [@talhayay11](https://github.com/talhayay11) for MVC5 connections between front - back.
 - [@deryacoban](https://github.com/deryacoban) for Back-end integration and development.
