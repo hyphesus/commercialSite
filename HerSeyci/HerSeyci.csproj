@@ -121,7 +121,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\account.cs" />
+    <Compile Include="Models\coupon.cs" />
     <Compile Include="Models\products.cs" />
+    <Compile Include="Models\sepet.cs" />
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -154,6 +156,7 @@
     <Content Include="Views\_LayoutPage2.cshtml" />
     <Content Include="Views\Admin\Urun_Ekle.cshtml" />
     <Content Include="Views\Admin\Urun_Guncelle.cshtml" />
+    <Content Include="Views\Admin\Kupon.cshtml" />
     <Content Include="Views\Sepet\Sepet.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
