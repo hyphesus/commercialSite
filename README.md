@@ -26,7 +26,7 @@ An e-commerce website for testing purposes. Can be used with necessary back-end 
 
 ## What to download
 
-This website has been created via MVC5, .NET and Microsoft SQL Server. Required Bootstrap , css and font files are in their corresponding directory. If any visual problem occurs, you may need to update these programs/files. Some files may not work due to ASP.NET software, please keep consider if you are having programs running this project on your PC.
+This website has been created via MVC5, .NET 7 and Microsoft SQL Server. Required Bootstrap , css and font files are in their corresponding directory. If any visual problem occurs, you may need to update these programs/files. Some files may not work due to ASP.NET software, please keep consider if you are having programs running this project on your PC.
 
 
 
